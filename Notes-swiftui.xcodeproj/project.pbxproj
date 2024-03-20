@@ -15,7 +15,19 @@
 		C4DD99652BA9AE33002B766D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99642BA9AE33002B766D /* ViewModel.swift */; };
 		C4DD99672BA9BC14002B766D /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99662BA9BC14002B766D /* CreateNoteView.swift */; };
 		C4DD99692BA9E191002B766D /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99682BA9E191002B766D /* UpdateNoteView.swift */; };
+		C4DD99722BA9EC2D002B766D /* NoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99712BA9EC2D002B766D /* NoteTest.swift */; };
+		C4DD99792BA9F6B8002B766D /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99782BA9F6B8002B766D /* ViewModelTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4DD99732BA9EC2D002B766D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4DD99462BA9A376002B766D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4DD994D2BA9A376002B766D;
+			remoteInfo = "Notes-swiftui";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C4DD994E2BA9A376002B766D /* Notes-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notes-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,10 +39,20 @@
 		C4DD99642BA9AE33002B766D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C4DD99662BA9BC14002B766D /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		C4DD99682BA9E191002B766D /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
+		C4DD996F2BA9EC2D002B766D /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4DD99712BA9EC2D002B766D /* NoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTest.swift; sourceTree = "<group>"; };
+		C4DD99782BA9F6B8002B766D /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C4DD994B2BA9A376002B766D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DD996C2BA9EC2D002B766D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C4DD99502BA9A376002B766D /* Notes-swiftui */,
+				C4DD99702BA9EC2D002B766D /* NotesTests */,
 				C4DD994F2BA9A376002B766D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C4DD994E2BA9A376002B766D /* Notes-swiftui.app */,
+				C4DD996F2BA9EC2D002B766D /* NotesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +119,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C4DD99702BA9EC2D002B766D /* NotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4DD99712BA9EC2D002B766D /* NoteTest.swift */,
+				C4DD99782BA9F6B8002B766D /* ViewModelTests.swift */,
+			);
+			path = NotesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +148,24 @@
 			productReference = C4DD994E2BA9A376002B766D /* Notes-swiftui.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C4DD996E2BA9EC2D002B766D /* NotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4DD99772BA9EC2D002B766D /* Build configuration list for PBXNativeTarget "NotesTests" */;
+			buildPhases = (
+				C4DD996B2BA9EC2D002B766D /* Sources */,
+				C4DD996C2BA9EC2D002B766D /* Frameworks */,
+				C4DD996D2BA9EC2D002B766D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4DD99742BA9EC2D002B766D /* PBXTargetDependency */,
+			);
+			name = NotesTests;
+			productName = NotesTests;
+			productReference = C4DD996F2BA9EC2D002B766D /* NotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +178,10 @@
 				TargetAttributes = {
 					C4DD994D2BA9A376002B766D = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					C4DD996E2BA9EC2D002B766D = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = C4DD994D2BA9A376002B766D;
 					};
 				};
 			};
@@ -144,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				C4DD994D2BA9A376002B766D /* Notes-swiftui */,
+				C4DD996E2BA9EC2D002B766D /* NotesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +211,13 @@
 			files = (
 				C4DD995B2BA9A377002B766D /* Preview Assets.xcassets in Resources */,
 				C4DD99582BA9A377002B766D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DD996D2BA9EC2D002B766D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +237,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4DD996B2BA9EC2D002B766D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4DD99792BA9F6B8002B766D /* ViewModelTests.swift in Sources */,
+				C4DD99722BA9EC2D002B766D /* NoteTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4DD99742BA9EC2D002B766D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4DD994D2BA9A376002B766D /* Notes-swiftui */;
+			targetProxy = C4DD99732BA9EC2D002B766D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C4DD995C2BA9A377002B766D /* Debug */ = {
@@ -354,6 +434,42 @@
 			};
 			name = Release;
 		};
+		C4DD99752BA9EC2D002B766D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67VYH75QRG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carlosmorgado.NotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Notes-swiftui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Notes-swiftui";
+			};
+			name = Debug;
+		};
+		C4DD99762BA9EC2D002B766D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67VYH75QRG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carlosmorgado.NotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Notes-swiftui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Notes-swiftui";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -371,6 +487,15 @@
 			buildConfigurations = (
 				C4DD995F2BA9A377002B766D /* Debug */,
 				C4DD99602BA9A377002B766D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4DD99772BA9EC2D002B766D /* Build configuration list for PBXNativeTarget "NotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4DD99752BA9EC2D002B766D /* Debug */,
+				C4DD99762BA9EC2D002B766D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
