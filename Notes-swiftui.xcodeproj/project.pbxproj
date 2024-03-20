@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C45D4D412BAB2C4500A1260E /* NotesDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D4D402BAB2C4500A1260E /* NotesDataBase.swift */; };
+		C45D4D442BAB3B0C00A1260E /* CreateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D4D432BAB3B0C00A1260E /* CreateNoteUseCase.swift */; };
+		C45D4D462BAB3D6A00A1260E /* FetchAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */; };
 		C4DD99522BA9A376002B766D /* Notes_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */; };
 		C4DD99542BA9A376002B766D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99532BA9A376002B766D /* ContentView.swift */; };
 		C4DD99582BA9A377002B766D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DD99572BA9A377002B766D /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		C45D4D402BAB2C4500A1260E /* NotesDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDataBase.swift; sourceTree = "<group>"; };
+		C45D4D432BAB3B0C00A1260E /* CreateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUseCase.swift; sourceTree = "<group>"; };
+		C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCase.swift; sourceTree = "<group>"; };
 		C4DD994E2BA9A376002B766D /* Notes-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notes-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_swiftuiApp.swift; sourceTree = "<group>"; };
 		C4DD99532BA9A376002B766D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,12 +97,14 @@
 		C4DD99502BA9A376002B766D /* Notes-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				C4DD99592BA9A377002B766D /* Preview Content */,
+				C4DD99572BA9A377002B766D /* Assets.xcassets */,
 				C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */,
 				C4DD996A2BA9E6A9002B766D /* Views */,
 				C45D4D422BAB2C6000A1260E /* ViewModel */,
 				C4DD99632BA9ADF2002B766D /* Model */,
-				C4DD99572BA9A377002B766D /* Assets.xcassets */,
-				C4DD99592BA9A377002B766D /* Preview Content */,
+				C45D4D432BAB3B0C00A1260E /* CreateNoteUseCase.swift */,
+				C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */,
 				C45D4D402BAB2C4500A1260E /* NotesDataBase.swift */,
 			);
 			path = "Notes-swiftui";
@@ -244,6 +250,8 @@
 				C4DD99542BA9A376002B766D /* ContentView.swift in Sources */,
 				C4DD99622BA9AC5F002B766D /* NoteModel.swift in Sources */,
 				C4DD99692BA9E191002B766D /* UpdateNoteView.swift in Sources */,
+				C45D4D442BAB3B0C00A1260E /* CreateNoteUseCase.swift in Sources */,
+				C45D4D462BAB3D6A00A1260E /* FetchAllNotesUseCase.swift in Sources */,
 				C4DD99672BA9BC14002B766D /* CreateNoteView.swift in Sources */,
 				C4DD99522BA9A376002B766D /* Notes_swiftuiApp.swift in Sources */,
 			);
