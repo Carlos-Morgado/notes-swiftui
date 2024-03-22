@@ -12,6 +12,8 @@
 		C45D4D462BAB3D6A00A1260E /* FetchAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */; };
 		C45D4D482BAB476E00A1260E /* ViewModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D4D472BAB476E00A1260E /* ViewModelIntegrationTests.swift */; };
 		C49928E12BAC78F5002F7465 /* UpdateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49928E02BAC78F5002F7465 /* UpdateNoteUseCase.swift */; };
+		C4AB9CC62BAD99E500C8089D /* RemoveNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB9CC52BAD99E500C8089D /* RemoveNoteUseCase.swift */; };
+		C4AB9CC82BAD9CB700C8089D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB9CC72BAD9CB700C8089D /* Mocks.swift */; };
 		C4DD99522BA9A376002B766D /* Notes_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */; };
 		C4DD99542BA9A376002B766D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD99532BA9A376002B766D /* ContentView.swift */; };
 		C4DD99582BA9A377002B766D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DD99572BA9A377002B766D /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCase.swift; sourceTree = "<group>"; };
 		C45D4D472BAB476E00A1260E /* ViewModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelIntegrationTests.swift; sourceTree = "<group>"; };
 		C49928E02BAC78F5002F7465 /* UpdateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUseCase.swift; sourceTree = "<group>"; };
+		C4AB9CC52BAD99E500C8089D /* RemoveNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCase.swift; sourceTree = "<group>"; };
+		C4AB9CC72BAD9CB700C8089D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		C4DD994E2BA9A376002B766D /* Notes-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notes-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_swiftuiApp.swift; sourceTree = "<group>"; };
 		C4DD99532BA9A376002B766D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C4AB9CC42BAD8BCF00C8089D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C45D4D432BAB3B0C00A1260E /* CreateNoteUseCase.swift */,
+				C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */,
+				C49928E02BAC78F5002F7465 /* UpdateNoteUseCase.swift */,
+				C4AB9CC52BAD99E500C8089D /* RemoveNoteUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C4AB9CC92BAD9CC000C8089D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C4AB9CC72BAD9CB700C8089D /* Mocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		C4DD99452BA9A376002B766D = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +129,8 @@
 				C4DD99512BA9A376002B766D /* Notes_swiftuiApp.swift */,
 				C4DD996A2BA9E6A9002B766D /* Views */,
 				C45D4D422BAB2C6000A1260E /* ViewModel */,
+				C4AB9CC42BAD8BCF00C8089D /* UseCases */,
 				C4DD99632BA9ADF2002B766D /* Model */,
-				C45D4D432BAB3B0C00A1260E /* CreateNoteUseCase.swift */,
-				C45D4D452BAB3D6A00A1260E /* FetchAllNotesUseCase.swift */,
-				C49928E02BAC78F5002F7465 /* UpdateNoteUseCase.swift */,
 				C45D4D402BAB2C4500A1260E /* NotesDataBase.swift */,
 			);
 			path = "Notes-swiftui";
@@ -144,6 +165,7 @@
 		C4DD99702BA9EC2D002B766D /* NotesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C4AB9CC92BAD9CC000C8089D /* Mocks */,
 				C4DD99712BA9EC2D002B766D /* NoteTest.swift */,
 				C4DD99782BA9F6B8002B766D /* ViewModelTests.swift */,
 				C45D4D472BAB476E00A1260E /* ViewModelIntegrationTests.swift */,
@@ -251,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AB9CC62BAD99E500C8089D /* RemoveNoteUseCase.swift in Sources */,
 				C45D4D412BAB2C4500A1260E /* NotesDataBase.swift in Sources */,
 				C4DD99652BA9AE33002B766D /* ViewModel.swift in Sources */,
 				C49928E12BAC78F5002F7465 /* UpdateNoteUseCase.swift in Sources */,
@@ -261,6 +284,7 @@
 				C45D4D462BAB3D6A00A1260E /* FetchAllNotesUseCase.swift in Sources */,
 				C4DD99672BA9BC14002B766D /* CreateNoteView.swift in Sources */,
 				C4DD99522BA9A376002B766D /* Notes_swiftuiApp.swift in Sources */,
+				C4AB9CC82BAD9CB700C8089D /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

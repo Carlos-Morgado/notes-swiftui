@@ -79,5 +79,21 @@ final class ViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(secondNote.title, "Hello 2")
         XCTAssertEqual(secondNote.text, "Text 2")
     }
+    
+    func testUpdateNote() {
+            sut.createNoteWith(title: "Note 1", text: "text 1")
+            
+            guard let note = sut.notes.first else {
+                XCTFail()
+                return
+            }
+            
+            sut.updateNoteWith(identifier: note.identifier, newTitle: "SwiftBeta", newText: "New Text")
+            sut.fetchAllNotes()
+            
+            XCTAssertEqual(sut.notes.count, 1, "Debería haber 1 nota en la base de datos")
+            XCTAssertEqual(sut.notes[0].title, "SwiftBeta")
+            XCTAssertEqual(sut.notes[0].text, "New Text")
+        }
 
 }
