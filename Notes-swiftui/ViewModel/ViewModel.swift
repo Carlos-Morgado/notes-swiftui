@@ -11,18 +11,25 @@ import Observation
 @Observable
 class ViewModel {
     var notes: [NoteModel]
+    var databaseError: DataBaseError? 
     
-    var createNoteUseCase: CreateNoteUseCase
-    var fetchAllNotesUseCase: FetchAllNotesUseCase
+    var createNoteUseCase: CreateNoteProtocol
+    var fetchAllNotesUseCase: FetchAllNotesProtocol
+    var updateNoteUseCase: UpdateNoteProtocol
+    var removeNoteUseCase: RemoveNoteProtocol
     
-    init(notes: [NoteModel] = [], 
-         createNoteUseCase: CreateNoteUseCase = CreateNoteUseCase(),
-         fetchAllNotesUseCase: FetchAllNotesUseCase = FetchAllNotesUseCase()) {
-        self.notes = notes
-        self.createNoteUseCase = createNoteUseCase
-        self.fetchAllNotesUseCase = fetchAllNotesUseCase
-        fetchAllNotes()
-    }
+    init(notes: [NoteModel] = [],
+             createNoteUseCase: CreateNoteProtocol = CreateNoteUseCase(),
+             fetchAllNotesUseCase: FetchAllNotesProtocol = FetchAllNotesUseCase(),
+             updateNoteUseCase: UpdateNoteProtocol = UpdateNoteUseCase(),
+             removeNoteUseCase: RemoveNoteProtocol = RemoveNoteUseCase()) {
+            self.notes = notes
+            self.createNoteUseCase = createNoteUseCase
+            self.fetchAllNotesUseCase = fetchAllNotesUseCase
+            self.updateNoteUseCase = updateNoteUseCase
+            self.removeNoteUseCase = removeNoteUseCase
+            fetchAllNotes()
+        }
     
     func createNoteWith(title: String, text: String) {
         do {
@@ -43,13 +50,22 @@ class ViewModel {
     }
     
     func updateNoteWith(identifier: UUID, newTitle: String, newText: String?) {
-        if let index = notes.firstIndex(where: { $0.identifier == identifier }) {
-            let updateNote = NoteModel(identifier: identifier, title: newTitle, text: newText, createdAt: notes[index].createdAt)
-            notes[index] = updateNote
+        do {
+            try updateNoteUseCase.updateNoteWith(identifier: identifier, title: newTitle, text: newText)
+        } catch {
+            print("Error \(error.localizedDescription)")
         }
     }
-
+        
     func removeNoteWith(identifier: UUID) {
-        notes.removeAll(where: { $0.identifier == identifier })
+        do {
+            try removeNoteUseCase.removeNoteWith(identifier: identifier)
+            fetchAllNotes()
+        } catch let error as DataBaseError {
+            print("Error \(error.localizedDescription)")
+            databaseError = error
+        } catch {
+            print("Error \(error.localizedDescription)")
+        }
     }
 }
