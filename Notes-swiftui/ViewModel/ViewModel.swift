@@ -11,6 +11,7 @@ import Observation
 @Observable
 class ViewModel {
     var notes: [NoteModel]
+    var databaseError: DataBaseError? 
     
     var createNoteUseCase: CreateNoteProtocol
     var fetchAllNotesUseCase: FetchAllNotesProtocol

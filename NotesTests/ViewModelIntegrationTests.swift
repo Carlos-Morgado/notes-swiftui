@@ -17,8 +17,8 @@ final class ViewModelIntegrationTests: XCTestCase {
         let database = NotesDataBase.shared
         database.container = NotesDataBase.setupContainer(inMemory: true)
         
-        let createNoteUseCase = CreateNoteUseCase(notesDatabse: database)
-        let fetchAllNotesUseCase = FetchAllNotesUseCase(notesDataBase: database)
+        let createNoteUseCase = CreateNoteUseCase(notesDatabase: database)
+        let fetchAllNotesUseCase = FetchAllNotesUseCase(notesDatabase: database)
         
         sut = ViewModel(createNoteUseCase: createNoteUseCase, fetchAllNotesUseCase: fetchAllNotesUseCase)
     }
@@ -81,19 +81,41 @@ final class ViewModelIntegrationTests: XCTestCase {
     }
     
     func testUpdateNote() {
-            sut.createNoteWith(title: "Note 1", text: "text 1")
-            
-            guard let note = sut.notes.first else {
-                XCTFail()
-                return
-            }
-            
-            sut.updateNoteWith(identifier: note.identifier, newTitle: "SwiftBeta", newText: "New Text")
-            sut.fetchAllNotes()
-            
-            XCTAssertEqual(sut.notes.count, 1, "Debería haber 1 nota en la base de datos")
-            XCTAssertEqual(sut.notes[0].title, "SwiftBeta")
-            XCTAssertEqual(sut.notes[0].text, "New Text")
+        sut.createNoteWith(title: "Note 1", text: "text 1")
+        
+        guard let note = sut.notes.first else {
+            XCTFail()
+            return
         }
-
+        
+        sut.updateNoteWith(identifier: note.identifier, newTitle: "SwiftBeta", newText: "New Text")
+        sut.fetchAllNotes()
+        
+        XCTAssertEqual(sut.notes.count, 1, "Debería haber 1 nota en la base de datos")
+        XCTAssertEqual(sut.notes[0].title, "SwiftBeta")
+        XCTAssertEqual(sut.notes[0].text, "New Text")
+    }
+    
+    func testRemoveNote() {
+        sut.createNoteWith(title: "Note 1", text: "text 1")
+        sut.createNoteWith(title: "Note 2", text: "text 2")
+        sut.createNoteWith(title: "Note 3", text: "text 3")
+        
+        guard let note = sut.notes.last else {
+            XCTFail()
+            return
+        }
+        
+        sut.removeNoteWith(identifier: note.identifier)
+        
+        XCTAssertEqual(sut.notes.count, 2, "Debería haber 2 notas en la base de datos")
+    }
+    
+    func testRemoveNoteInDatabaseShouldThrowError() {
+        sut.removeNoteWith(identifier: UUID())
+        
+        XCTAssertEqual(sut.notes.count, 0)
+        XCTAssertNotNil(sut.databaseError)
+        XCTAssertEqual(sut.databaseError, DataBaseError.errorRemove)
+    }
 }
