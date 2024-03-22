@@ -6,22 +6,6 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4DD994D2BA9A376002B766D"
-               BuildableName = "Notes-swiftui.app"
-               BlueprintName = "Notes-swiftui"
-               ReferencedContainer = "container:Notes-swiftui.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -29,20 +13,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-<<<<<<< HEAD
-=======
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4DD996E2BA9EC2D002B766D"
-               BuildableName = "NotesTests.xctest"
-               BlueprintName = "NotesTests"
-               ReferencedContainer = "container:Notes-swiftui.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
@@ -55,7 +26,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
->>>>>>> 00e4014cadd3b237ce98344aa031875b8e67292d
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -84,8 +54,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4DD994D2BA9A376002B766D"
@@ -93,7 +62,7 @@
             BlueprintName = "Notes-swiftui"
             ReferencedContainer = "container:Notes-swiftui.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
